@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Maaz Portfolio</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/unicons.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <!-- MAIN STYLE -->
+    <link rel="stylesheet" href="css/tooplate-style.css">
+    
+    
+    <style>
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        color: #333; /* Default text color for light theme */
+        --icon-color: #333;
+        --icon-hover-color: #007bff;
+        --bar-color: #ccc;
+      }
+    
+      body.dark-theme {
+        background: #121212;
+        color: #eee; /* Light text for dark theme */
+        --icon-color: #eee;
+        --icon-hover-color: #00aaff;
+        --bar-color: #555;
+      }
+    
+      /* Style for the "Hey folks..." heading */
+      .about-title {
+        color: #333; /* Default dark color for light theme */
+      }
+    
+      body.dark-theme .about-title {
+        color: #eee; /* Light color for dark theme */
+      }
+    
+      .about-description {
+        color: #333; /* Light mode text */
+      }
+
+      body.dark-theme .about-description {
+        color: #eee !important; /* White text in dark mode */
+      }
+    
+      /* ... rest of your existing CSS ... */
+    
+      .services-section {
+        text-align: center;
+        padding: 60px 20px;
+      }
+    
+      .services-section h2 {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: inherit; /* Inherit text color from body */
+      }
+    
+      .services-section p.subtitle {
+        max-width: 600px;
+        margin: 0 auto 40px;
+        color: #555; /* Light theme subtitle color */
+      }
+    
+      body.dark-theme .services-section p.subtitle {
+        color: #bbb; /* Dark theme subtitle color */
+      }
+    
+      .social-bar {
+        position: fixed;
+        top: 60%;
+        right: 25px;
+        transform: translateY(-50%);
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .social-icons {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .social-icons li {
+        margin: 10px 0;
+      }
+    
+      .social-icons li a {
+        font-size: 1.3em; /* Adjust icon size */
+        color: var(--icon-color); /* Inherit color from body or dark theme */
+        transition: color 0.3s ease-in-out;
+      }
+    
+      .social-icons li a:hover {
+        transform: scale(1.3);
+        color: var(--icon-hover-color);
+      }
+    
+      .bar-line {
+        width: 1px;
+        height: 60px;
+        background: var(--bar-color);
+        margin: 15px auto;
+      }
+    
+      .scroll-down a {
+        display: inline-block;
+        color: var(--icon-color);
+        border: 1px solid var(--icon-color);
+        border-radius: 35%;
+        padding: 10px;
+        transition: background 0.3s, color 0.3s, border-color 0.3s;
+      }
+    
+      .scroll-down-indicator .arrow-down {
+        border: 2px solid var(--icon-color); /* Use the CSS variable */
+        border-radius: 50%; /* Makes it a circle */
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 40px; /* Set line-height equal to height */
+        text-align: center; /* Center the icon horizontally */
+      }
+    </style>
+  </head>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const colorModeToggle = document.querySelector('.color-mode');
+  
+      colorModeToggle.addEventListener('click', function () {
+        document.body.classList.toggle('dark-theme');
+      });
+    });
+  </script>
+  
+  <body>
+
+    <!-- MENU -->
+    <nav class="navbar navbar-expand-sm navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><i class='uil uil-user'></i> Maaz</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item"><a href="#about" class="nav-link"><span data-hover="About">About</span></a></li>
+            <!-- <li class="nav-item"><a href="#project" class="nav-link"><span data-hover="Projects">Projects</span></a></li> -->
+            <li class="nav-item"><a href="#resume" class="nav-link"><span data-hover="Resume">Resume</span></a></li>
+            <li class="nav-item"><a href="#contact" class="nav-link"><span data-hover="Contact">Contact</span></a></li>
+            <li class="nav-item"><a href="#skills" class="nav-link"><span data-hover="Skills">Skills</span></a></li>
+          </ul>
+
+          <ul class="navbar-nav ml-lg-auto">
+            <div class="ml-lg-4">
+              <div class="color-mode d-lg-flex justify-content-center align-items-center">
+                <i class="color-mode-icon"></i>
+                Color mode
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ABOUT -->
+    <section class="about d-lg-flex justify-content-center align-items-center py-3" id="about">
+      <div class="container">
+        <div class="row">
+    
+          <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
+            <div class="about-text">
+              <small class="small-text">Welcome to <span class="mobile-block">my portfolio website!</span></small>
+              <h1 class="animated animated-text mb-2">
+                <span class="mr-2">Hey folks, I'm</span>
+                <div class="animated-info">
+                  <span class="animated-item">Mohd Maaz</span>
+                  <span class="animated-item">Data Analyst</span>
+                  <span class="animated-item">Data Engineer</span>
+                </div>
+              </h1>
+    
+              <p class="mb-3 about-description">
+                Turning data into actionable insights is my passion. I excel at analyzing trends, uncovering patterns,
+                automating processes, and designing intuitive, impactful dashboards to unlock the full potential of data
+                and drive informed decision-making.
+              </p>
+    
+                <div class="custom-btn-group mt-2">
+                  <a href="https://raw.githubusercontent.com/Mohdmaazekram/Resume/main/Maaz_Resume_2025.pdf" 
+                     download="Maaz_Resume_2025.pdf" 
+                     class="btn mr-lg-2 custom-btn">
+                    <i class='uil uil-file-alt'></i> Download Resume</a>
+                <a href="https://github.com/Mohdmaazekram?tab=repositories"
+                  class="btn custom-btn custom-btn-bg custom-btn-link">My Work</a>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-lg-5 col-md-12 col-12">
+            <div class="about-image svg" style="margin: 15px;">
+              <img
+                src="https://themewagon.github.io/satner/img/banner/home-right.png"
+                class="img-fluid" alt="image" style="margin: 15px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT ME -->
+  </br>
+    <section class="about-me d-lg-flex justify-content-center align-items-center py-3" id="about-me">
+      <div class="container">
+        <div class="row">
+    
+          <div class="col-lg-5 col-md-12 col-12">
+            <div class="about-image svg" style="margin: 15px;">
+              <img
+                src="data:image/jpeg;base64,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"
+                class="img-fluid" alt="about me image" style="margin: 30px 30px 30px 85px; height: 330px;">
+            </div>
+          </div>
+
+          <!-- RIGHT SIDE TEXT -->
+          <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
+            <div class="about-text">
+              <small class="small-text">Let’s Dive Deeper <span class="mobile-block">about me</span></small>
+              <h2 class="animated animated-text">
+                <span class="mr-2">I'm, Mohd Maaz Ekram</span>
+              </h2>
+
+              <p class="mb-3 about-description">With over 4 years of diverse experience across data analytics, customer service, and backend operations, I bring a unique blend of technical expertise and business insight. I hold a Master’s degree in Commerce and a Master’s Diploma in Business Data Analytics, which have equipped me with strong analytical, statistical, and decision-making skills.
+              </br>
+              </br>
+                I am proficient in data analysis, statistical modeling, data infrastructure strategy, and dashboard design. I’ve successfully led several high-impact projects, leveraging automation tools and BI platforms to drive data-informed decision-making.</p>
+              
+                <ul class="about-info mt-4 px-md-0 px-2">
+                  <li class="d-flex"><span><strong>Profile :</strong></span> <span>&nbsp;Data Science &amp; Analytics</span></li>
+                  <li class="d-flex"><span><strong>Domain :</strong></span> <span>&nbsp;E-commerce, Loan Sales</span></li>
+                  <li class="d-flex"><span><strong>Education :</strong></span>
+                    <span>&nbsp;Master’s Diploma in Business Data Analytics</span>
+                  </li>
+                  <li class="d-flex"><span><strong>Language :</strong></span> <span>&nbsp;English, Hindi</span></li>
+                  <li class="d-flex"><span><strong>BI Tools :</strong></span> <span>&nbsp;Microsoft Power BI, Looker &amp; Tableau</span></li>
+                  <li class="d-flex">
+                    <span><strong>Other Skills :</strong></span>
+                    <span>&nbsp;Python, SQL, MS Excel, GitHub, Web Scraping &
+                    </br>
+                    Google Cloud Platform (BigQuery,Vertex AI,Cloud Function,Google Colab)</span>
+                  </li>
+                  <li class="d-flex"><span><strong>Interest :</strong></span> <span>&nbsp;Traveling, Indoor Games, Problem Solving </span></li>
+                </ul>
+
+              <div class="custom-btn-group mt-4">
+                <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link">Let's Connect</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="social-bar">
+      <ul class="social-icons">
+        <li><a href="https://www.facebook.com/profile.php?id=100070098618904" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="YOUR_TWITTER_URL" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="https://www.instagram.com/maazushaikh_08/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/mohdmaazekram/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+        <li><a href="https://github.com/Mohdmaazekram" target="_blank"><i class="fab fa-github"></i></a></li>
+      </ul>
+      <div class="bar-line"></div>
+      <div class="scroll-down">
+        <a href="#contact"><i class="fas fa-chevron-down"></i></a>
+      </div>
+    </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const body = document.body;
+        const colorModeToggle = document.querySelector('#color-mode-toggle'); // Assuming you have a toggle with this ID
+    
+        function enableDarkMode() {
+          body.classList.add('dark-theme');
+          localStorage.setItem('theme', 'dark');
+        }
+    
+        function enableLightMode() {
+          body.classList.remove('dark-theme');
+          localStorage.setItem('theme', 'light');
+        }
+    
+        function updateTheme() {
+          const currentTheme = localStorage.getItem('theme');
+          if (currentTheme === 'dark') {
+            enableDarkMode();
+          } else {
+            enableLightMode();
+          }
+        }
+    
+        // Load theme on page load
+        updateTheme();
+    
+        // Example event listener for a color mode toggle button
+        if (colorModeToggle) {
+          colorModeToggle.addEventListener('click', function() {
+            if (body.classList.contains('dark-theme')) {
+              enableLightMode();
+            } else {
+              enableDarkMode();
+            }
+          });
+        }
+      });
+    </script>
+
+  </body>
+      </br>
+      </br>
+      </br>
+      </br>
+      <div class="text-center" style="margin-bottom: 40px;">
+        <h2 class="section-title text-center">Service Offers</h2>
+      </div>
+        <p class="subtitle">
+          Empowering businesses through innovative data solutions, turning complex information into actionable insights and strategic success.
+        </p>
+      
+        <div class="services-grid">
+          <div class="service-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/1907/1907719.png" alt="Data Analyst Icon">
+            <h4><a href="https://github.com/Mohdmaazekram/MarketPlace-Outstanding-DashBoard"><strong>Data Analyst</strong></a></h4>
+            <p><a href="https://github.com/Mohdmaazekram/MarketPlace-Outstanding-DashBoard">Transforming raw data into meaningful insights through visualization and analysis tools.</a></p>
+          </div>
+        
+          <div class="service-card">
+            <img src="https://png.pngtree.com/png-vector/20230302/ourmid/pngtree-dashboard-line-icon-vector-png-image_6626604.png" alt="Dashboard Design Icon">
+            <h4><a href="https://github.com/Mohdmaazekram/HR_Dashboard-With-Tableau"><strong>Dashboard Design</strong></a></h4>
+            <p><a href="https://github.com/Mohdmaazekram/HR_Dashboard-With-Tableau">Designing interactive dashboards that communicate metrics effectively and beautifully.</a></p>
+          </div>
+        
+          <div class="service-card">
+            <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/workflow-automation-614964.png?f=webp" alt="Automation Icon">
+            <h4><a href="https://github.com/Mohdmaazekram/Email-automation"><strong>Automation Workflow</strong></a></h4>
+            <p><a href="https://github.com/Mohdmaazekram/Email-automation">Automating repetitive business tasks using scripts, triggers, and scheduling tools.</a></p>
+          </div>
+        
+          <div class="service-card">
+            <img src="https://cdn-icons-png.freepik.com/512/12663/12663264.png" alt="Data Engineer Icon">
+            <h4><a href="https://github.com/Mohdmaazekram/Competitor-analysis-using-selenium"><strong>Data Engineer</strong></a></h4>
+            <p><a href="https://github.com/Mohdmaazekram/Competitor-analysis-using-selenium">Building data pipelines and infrastructure for efficient storage, transformation, and access.</a></p>
+          </div>
+        </div>
+           
+      
+      <style>
+        .services-grid {
+          display: flex;
+          justify-content: center;
+          gap: 30px;
+          flex-wrap: wrap;
+        }
+      
+        .service-card {
+          background-color: #f9f9ff;
+          border-radius: 10px;
+          padding: 30px 20px;
+          width: 230px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+          transition: transform 0.3s ease;
+        }
+      
+        .service-card img {
+          width: 70px;
+          height: 70px;
+          object-fit: contain;
+          margin-bottom: 20px;
+        }
+      
+        .service-card img:hover {
+          transform: scale(1.1);
+          transition: transform 0.3s ease-in-out;
+        }
+      
+        .services-section h2 {
+          text-align: center;
+          font-size: 28px;
+          margin-bottom: 10px;
+        }
+      
+        .subtitle {
+          text-align: center;
+          margin-bottom: 30px;
+          max-width: 600px;
+          margin-left: auto;
+          margin-right: auto;
+          font-size: 14px;
+          color: #555;
+        }
+      
+        .service-card h4 {
+          margin: 10px 0 10px;
+          font-size: 18px;
+        }
+      
+        .service-card p {
+          font-size: 13px;
+          color: #555;
+        }
+        .service-card a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        .service-card a:hover {
+          text-decoration: underline;
+        }
+
+      </style>
+
+    </body>
+  </br>
+  </br>
+  </br>
+
+    <!-- FEATURES -->
+    <section class="resume py-5 d-lg-flex justify-content-center align-items-center" id="resume">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12">
+                  <h2 class="mb-4">Experiences</h2>
+
+                    <div class="timeline">
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>2024</span>
+                            </div>
+                            <div class="timeline-info">
+                              <h3>
+                                <span id="job-title">Junior Data Analyst</span>
+                                <small id="company-name">Candere By Kalyan Jewellers (2023 - Present)</small>
+                              </h3>
+                              <p id="job-description">
+                                Junior Data Analyst - Candere By Kalyan Jewellers
+                                Passionate about transforming raw data into actionable insights. Skilled in SQL, BigQuery, and Looker Studio with a focus on data cleaning, automation, and dashboard creation. I streamline workflows and build reliable data solutions that support smarter decision-making.
+                              </p>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="timeline-wrapper">
+                          <div class="timeline-yr">
+                              <span>2022</span>
+                          </div>
+                          <div class="timeline-info">
+                              <h3><span>Customer Service Executive<small>Athena BPO Pvt. Ltd. (2022 - 2023)</small></h3>
+                              <p>Customer Service Executive – Athena BPO
+                                Handled high-volume calls for ICICI Bank credit card applications. Assessed eligibility, resolved customer queries, and managed KYC and documentation. Ensured smooth processing and collaborated with teams to streamline approvals.</p>
+                          </div>
+                      </div>
+
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>2021</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Loan Backend Operation Specialist<small>E-Revbay Pvt. Ltd. (2021 - 2022)</small></h3>
+                                <p>Loan Backend Operation Specialist – E-Revbay Pvt. Ltd.
+                                  Manage loan and insurance application processing, ensure compliance, streamline operations, and reduce errors to improve efficiency and customer satisfaction.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-12">
+                  <h2 class="mb-4 mobile-mt-2">Educations</h2>
+
+                    <div class="timeline">
+                        <div class="timeline-wrapper">
+                             <div class="timeline-yr">
+                                  <span>2024</span>
+                             </div>
+                             <div class="timeline-info">
+                                  <h3><span>Masters in Business Data Analyst</span><small>IT-Vedant Institute (2023 - 2024) </small></h3>
+                                  <p>Gained in-depth knowledge of data analysis, statistical modeling, and business intelligence. Learned to use tools like SQL, Python, Excel, and visualization platforms to extract insights, solve business problems, and support data-driven strategies.</p>
+                             </div>
+                        </div>
+
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>2024</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Masters in Commerce</span><small>Tolani College (2022 - 2024) </small></h3>
+                                <p>Developed a strong foundation in finance, accounting, economics, and business management. Gained analytical and problem-solving skills to understand and interpret complex business data and financial reports.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>2022</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Bachelor of Banking and Insurance</span><small>Tolani College of Commerce (2019 - 2022) </small></h3>
+                                <p>Studied core concepts of banking, finance, and insurance, including risk management, financial markets, and regulatory frameworks. Built a solid understanding of financial services and customer-centric operations.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- My Skills Heading Outside the Image Section -->
+<div class="text-center" style="margin-bottom: 40px;">
+  <h2 class="section-title text-center">My Skills</h2>
+</div>
+
+<section class="ftco-section ftco-hireme img margin-top" id="skills" style="background-image: url('https://raw.githubusercontent.com/rishabhnmishra/Portfolio-Website-Template/refs/heads/main/images/bg_1.jpg'); background-size: cover; background-position: center; padding: 60px 0;">
+  <div class="container text-center text-white">
+    <div class="row justify-content-center">
+      <div class="col-md-3 col-6 mb-4">
+        <div class="p-4 bg-dark rounded shadow text-white">
+          <h1 style="color: #ffc72c; font-size: 48px;">
+            <span class="counter" data-target="90">0</span><span style="font-size: 24px;">%</span>
+          </h1>
+          <p style="font-weight: bold; color: white;">SQL</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6 mb-4">
+        <div class="p-4 bg-dark rounded shadow text-white">
+          <h1 style="color: #ffc72c; font-size: 48px;">
+            <span class="counter" data-target="80">0</span><span style="font-size: 24px;">%</span>
+          </h1>
+          <p style="font-weight: bold; color: white;">BigQuery/Services</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6 mb-4">
+        <div class="p-4 bg-dark rounded shadow text-white">
+          <h1 style="color: #ffc72c; font-size: 48px;">
+            <span class="counter" data-target="85">0</span><span style="font-size: 24px;">%</span>
+          </h1>
+          <p style="font-weight: bold; color: white;">MS Excel</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6 mb-4">
+        <div class="p-4 bg-dark rounded shadow text-white">
+          <h1 style="color: #ffc72c; font-size: 48px;">
+            <span class="counter" data-target="80">0</span><span style="font-size: 24px;">%</span>
+          </h1>
+          <p style="font-weight: bold; color: white;">Python</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <h2 style="font-weight: bold; color: white;">More projects on <span style="color: #ffc72c;">Github</span></h2>
+      <p style="font-size: 18px; color: white;">I love to solve business problems & uncover hidden data stories</p>
+      <a href="https://github.com/Mohdmaazekram?tab=repositories" class="btn btn-warning text-dark py-2 px-4 mt-2" style="font-weight: bold;">GitHub</a>
+    </div>
+  </div>
+</section>
+
+
+    <script>
+      const counters = document.querySelectorAll('.counter');
+      const speed = 20; // smaller is slower
+    
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText;
+          const increment = Math.ceil(target / speed);
+    
+          if (count < target) {
+            counter.innerText = count + increment > target ? target : count + increment;
+            setTimeout(updateCount, 60); // more delay = slower
+          } else {
+            counter.innerText = target;
+          }
+        };
+    
+        updateCount();
+      });
+    </script>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section light-theme" style="padding: 60px 0;">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12 text-center mb-5">
+                  <h2 class="section-title">Let's Get In Touch!</h2>
+                  <hr class="section-divider">
+                  <p class="section-description">
+                      Ready to start your next project with us? Send a message and we’ll get back to you as soon as possible!
+                  </p>
+              </div>
+          </div>
+  
+          <div class="row align-items-start">
+              <div class="col-md-6 mb-4 mb-md-0">
+                  <div class="contact-info-box">
+                      <iframe
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609911557!2d72.74109906871264!3d19.082197839858066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63fd48cc7c3%3A0xa0baf3bba2efef8!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1641023813460!5m2!1sen!2sin"
+                          width="100%"
+                          height="300"
+                          style="border:0;"
+                          allowfullscreen=""
+                          loading="lazy"
+                      ></iframe>
+  
+                      <div class="say-hello-box">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                          <h3 class="say-hello-title" style="margin: 0;">Marol Naka, Andheri East, Mumbai 400059</h3>
+                          <a href="https://www.google.com/maps/place/Marol+Naka,+Andheri+East,+Mumbai+400059" target="_blank">
+                            <i class="fas fa-map-marker-alt" style="color: #ffffff; font-size: 20px;"></i>
+                          </a>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                          <p class="say-hello-phone" style="margin: 0;">+91 887-956-9497</p>
+                          <i class="fas fa-phone-alt" style="color: #ffffff; font-size: 20px;"></i>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+                          <a href="mailto:mohdmaazekram@gmail.com" class="say-hello-email" style="margin: 0; text-decoration: none; color: #ffffff;">
+                            mohdmaazekram@gmail.com
+                          </a>
+                          <a href="mailto:mohdmaazekram@gmail.com">
+                            <i class="fas fa-envelope" style="color: #ffffff; font-size: 20px;"></i>
+                          </a>
+                        </div>
+                        
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="col-md-6">
+                  <form class="contact-form">
+                      <div class="mb-3">
+                        <input type="text" class="form-control themed-placeholder" placeholder="Full name" required>
+                      </div>
+                      <div class="mb-3">
+                        <input type="email" class="form-control themed-placeholder" placeholder="Email address" required>
+                      </div>
+                      <div class="mb-3">
+                        <input type="tel" class="form-control themed-placeholder" placeholder="Phone number" required>
+                      </div>
+                      <div class="mb-3">
+                        <textarea class="form-control themed-placeholder" rows="4" placeholder="Message" required></textarea>
+                          <small class="text-danger">A message is required.</small>
+                      </div>
+                      <div class="text-center">
+                          <button type="submit" class="btn submit-button">SUBMIT</button>
+                      </div>
+                  </form>
+                  <div class="text-center mt-4 contact-phone-info">
+                      <i class="fas fa-mobile-alt fa-2x"></i>
+                      <p class="section-title text-center">+91 (887) -956-9497</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <style>
+  /* Base styles */
+  #contact {
+      transition: background-color 0.3s ease;
+  }
+  
+  .section-title {
+      font-weight: bold;
+      transition: color 0.3s ease;
+  }
+  
+  .section-divider {
+      width: 60px;
+      height: 3px;
+      background-color: #ffc72c;
+      border: none;
+      margin: 10px auto;
+  }
+  
+  .section-description {
+      color: #6c757d;
+      transition: color 0.3s ease;
+  }
+  
+  .contact-info-box {
+      background-color: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .say-hello-box {
+      padding: 20px;
+      background-color: #343a40;
+      transition: background-color 0.3s ease;
+  }
+  
+  .say-hello-title {
+      margin-bottom: 40px;
+      color: #fff;
+      transition: color 0.3s ease;
+      font-size: 1.0em;
+  }
+  
+  .say-hello-phone,
+  .say-hello-email {
+      color: #fff;
+      margin-bottom: 15px;
+      transition: color 0.3s ease;
+      font-size: 1.0em;
+  }
+  
+  .say-hello-email a {
+      color: #ffc72c;
+      text-decoration: none;
+      transition: color 0.3s ease;
+  }
+  
+  .contact-form .form-control {
+      /* Add your form control styles here */
+  }
+  
+  .submit-button {
+      background-color: #ffc72c;
+      color: #000;
+      font-weight: bold;
+      padding: 12px 30px;
+      border-radius: 30px;
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .contact-phone-info i {
+      color: #000;
+      transition: color 0.3s ease;
+  }
+  
+  .phone-number {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #000;
+      transition: color 0.3s ease;
+  }
+  
+  /* Dark theme styles */
+  .dark-theme {
+      background-color: #212529 !important;
+  }
+  
+  .dark-theme .section-title,
+  .dark-theme .section-description,
+  .dark-theme .contact-phone-info i,
+  .dark-theme .phone-number {
+      color: #f8f9fa !important;
+  }
+  
+  .dark-theme .contact-info-box {
+      background-color: #343a40 !important;
+      box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+  }
+  
+  .dark-theme .say-hello-box {
+      background-color: #495057 !important;
+  }
+  
+  .dark-theme .say-hello-title,
+  .dark-theme .say-hello-phone,
+  .dark-theme .say-hello-email {
+      color: #e9ecef !important;
+  }
+  
+  .dark-theme .submit-button {
+      color: #fff !important;
+  }
+  </style>
+  
+  <script>
+  function setTheme(theme) {
+      const contactSection = document.getElementById('contact');
+      contactSection.className = `contact-section ${theme}-theme`;
+      localStorage.setItem('theme', theme); // Optional: Save theme preference
+  }
+  
+  function loadTheme() {
+      const savedTheme = localStorage.getItem('theme'); // Optional: Load saved theme
+      if (savedTheme) {
+          setTheme(savedTheme);
+      } else {
+          // Set a default theme (e.g., light)
+          setTheme('light');
+      }
+  }
+  
+  // Call loadTheme on page load (optional)
+  // document.addEventListener('DOMContentLoaded', loadTheme);
+  
+  // Example of how you might trigger theme change (e.g., button click)
+  // function toggleTheme() {
+  //     const currentTheme = localStorage.getItem('theme') || 'light';
+  //     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  //     setTheme(newTheme);
+  // }
+  </script>
+    
+
+
+    <!-- FOOTER -->
+     <footer class="footer py-5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-lg-12 col-12">                                
+                        <p class="copyright-text text-center">Copyright &copy; 2025 All rights reserved.</p>
+                        <!-- <p class="copyright-text text-center">Designed by <a rel="nofollow" href="https://www.facebook.com/tooplate">Tooplate</a></p> -->
+                    </div>
+                    
+               </div>
+          </div>
+     </footer>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/Headroom.js"></script>
+    <script src="js/jQuery.headroom.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/custom.js"></script>
+
+  </body>
+</html>
