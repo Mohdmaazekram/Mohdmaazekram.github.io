@@ -140,19 +140,337 @@
         line-height: 40px; /* Set line-height equal to height */
         text-align: center; /* Center the icon horizontally */
       }
+
+      .about-text {
+        margin-top: 50px;
+      }
+      .about-card {
+        width: 350px;
+        margin: 40px auto;
+        margin-left: 0;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        padding: 30px;
+        text-align: center;
+        font-family: 'Segoe UI', sans-serif;
+      }
+
+      .about-card h2 {
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+        color: #333;
+      }
+
+      .profile-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 10px 0;
+      }
+
+      .about-card h3 {
+        margin: 10px 0 5px;
+        font-size: 1.2rem;
+      }
+
+      .role {
+        color: #666;
+        margin-bottom: 15px;
+        font-weight: 500;
+      }
+
+      .bio {
+        font-size: 0.95rem;
+        color: #444;
+        margin-bottom: 20px;
+      }
+
+      .skills {
+        margin-bottom: 15px;
+      }
+
+      .tags span {
+        background: #f1f1f1;
+        padding: 6px 12px;
+        border-radius: 8px;
+        margin: 5px;
+        display: inline-block;
+        font-size: 0.85rem;
+      }
+
+      .socials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+      }
+
+      .socials a {
+        color: #333;
+        font-size: 1.1rem;
+        text-decoration: none;
+      }
+
+      .location {
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        color: #555;
+      }
+
+      /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx--Card Section CSS--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+      /* Container to hold the card and the overlay */
+      .about-card-container {
+        position: relative; /* Needed for absolute positioning of the overlay */
+        perspective: 1000px;
+      }
+    
+      /* Style for the card */
+      .about-card {
+        background: #f9f9f9;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 90%;
+        transform-origin: center;
+        transition: transform 0.6s ease, opacity 0.3s ease; /* Added opacity transition */
+        transform-style: preserve-3d; /* For potential back-face visibility */
+      }
+    
+      /* Hover animation */
+      .about-card-container:hover .about-card {
+        transform: rotateY(180deg); /* Rotate to show the "back" */
+        opacity: 0.6; /* Make it slightly transparent on hover */
+        filter: blur(4px);
+      }
+    
+      /* Blur overlay */
+      .blur-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent; /* Initially transparent */
+        backdrop-filter: blur(5px);
+        opacity: 0; /* Initially hidden */
+        transition: opacity 0.3s ease;
+        z-index: 0; /* Place it behind the card */
+        border-radius: 12px; /* Match card border-radius */
+        display: none;
+      }
+    
+      /* Show blur overlay when hovering */
+      .about-card-container:hover .blur-overlay {
+        opacity: 1;
+      }
+    
+      /* Optional: Add subtle tilt on smaller screens */
+      @media (max-width: 992px) {
+        .about-card-container:hover .about-card {
+          transform: rotateY(10deg) rotateX(5deg) rotateY(90deg); /* Adjust rotation */
+          opacity: 0.6;
+        }
+      }
+
+      /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx--Service Offers CSS--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+      .services-grid {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+    
+      .service-card {
+        background-color: #f9f9ff;
+        border-radius: 10px;
+        padding: 30px 20px;
+        width: 230px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+      }
+    
+      .service-card img {
+        width: 70px;
+        height: 70px;
+        object-fit: contain;
+        margin-bottom: 20px;
+      }
+    
+      .service-card img:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
+      }
+    
+      .services-section h2 {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+    
+      .subtitle {
+        text-align: center;
+        margin-bottom: 30px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 14px;
+        color: #222;
+      }
+    
+      .service-card h4 {
+        margin: 10px 0 10px;
+        font-size: 18px;
+      }
+    
+      .service-card p {
+        font-size: 13px;
+        color: #222;
+      }
+      .service-card a {
+        color: #222;
+        text-decoration: none;
+      }
+
+      .service-card a:hover {
+        text-decoration: underline;
+      }
+
+      /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx--Contact CSS--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+
+      /* Base styles */
+      #contact {
+          transition: background-color 0.3s ease;
+      }
+      
+      .section-title {
+          font-weight: bold;
+          transition: color 0.3s ease;
+      }
+      
+      .section-divider {
+          width: 60px;
+          height: 3px;
+          background-color: #ffc72c;
+          border: none;
+          margin: 10px auto;
+      }
+      
+      .section-description {
+          color: #6c757d;
+          transition: color 0.3s ease;
+      }
+      
+      .contact-info-box {
+          background-color: #fff;
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+          transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .say-hello-box {
+          padding: 20px;
+          background-color: #343a40;
+          transition: background-color 0.3s ease;
+      }
+      
+      .say-hello-title {
+          margin-bottom: 40px;
+          color: #fff;
+          transition: color 0.3s ease;
+          font-size: 1.0em;
+      }
+      
+      .say-hello-phone,
+      .say-hello-email {
+          color: #fff;
+          margin-bottom: 15px;
+          transition: color 0.3s ease;
+          font-size: 1.0em;
+      }
+      
+      .say-hello-email a {
+          color: #ffc72c;
+          text-decoration: none;
+          transition: color 0.3s ease;
+      }
+      
+      .contact-form .form-control {
+          /* Add your form control styles here */
+      }
+      
+      .submit-button {
+          background-color: #ffc72c;
+          color: #000;
+          font-weight: bold;
+          padding: 12px 30px;
+          border-radius: 30px;
+          width: 100%;
+          border: none;
+          cursor: pointer;
+          transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      .contact-phone-info i {
+          color: #000;
+          transition: color 0.3s ease;
+      }
+      
+      .phone-number {
+          margin-top: 10px;
+          font-weight: bold;
+          color: #000;
+          transition: color 0.3s ease;
+      }
+      
+      /* Dark theme styles */
+      .dark-theme {
+          background-color: #212529 !important;
+      }
+      
+      .dark-theme .section-title,
+      .dark-theme .section-description,
+      .dark-theme .contact-phone-info i,
+      .dark-theme .phone-number {
+          color: #f8f9fa !important;
+      }
+      
+      .dark-theme .contact-info-box {
+          background-color: #343a40 !important;
+          box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+      }
+      
+      .dark-theme .say-hello-box {
+          background-color: #495057 !important;
+      }
+      
+      .dark-theme .say-hello-title,
+      .dark-theme .say-hello-phone,
+      .dark-theme .say-hello-email {
+          color: #e9ecef !important;
+      }
+      
+      .dark-theme .submit-button {
+          color: #fff !important;
+      }
+
     </style>
   </head>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const colorModeToggle = document.querySelector('.color-mode');
   
-      colorModeToggle.addEventListener('click', function () {
-        document.body.classList.toggle('dark-theme');
-      });
-    });
-  </script>
-  
-  <body>
+  <body class="dark-mode">
 
     <!-- MENU -->
     <nav class="navbar navbar-expand-sm navbar-light">
@@ -169,16 +487,17 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item"><a href="#about" class="nav-link"><span data-hover="About">About</span></a></li>
-            <!-- <li class="nav-item"><a href="#project" class="nav-link"><span data-hover="Projects">Projects</span></a></li> -->
+            <li class="nav-item"><a href="#service" class="nav-link"><span data-hover="Service">Service</span></a></li>
             <li class="nav-item"><a href="#resume" class="nav-link"><span data-hover="Resume">Resume</span></a></li>
-            <li class="nav-item"><a href="#contact" class="nav-link"><span data-hover="Contact">Contact</span></a></li>
+            <li class="nav-item"><a href="#project" class="nav-link"><span data-hover="Projects">Projects</span></a></li>
             <li class="nav-item"><a href="#skills" class="nav-link"><span data-hover="Skills">Skills</span></a></li>
+            <li class="nav-item"><a href="#contact" class="nav-link"><span data-hover="Contact">Contact</span></a></li>
           </ul>
 
           <ul class="navbar-nav ml-lg-auto">
             <div class="ml-lg-4">
               <div class="color-mode d-lg-flex justify-content-center align-items-center">
-                <i class="color-mode-icon"></i>
+                <i class="color-mode-icon active"></i>
                 Color mode
               </div>
             </div>
@@ -186,14 +505,16 @@
         </div>
       </div>
     </nav>
+  </br>
+
 
     <!-- ABOUT -->
-    <section class="about d-lg-flex justify-content-center align-items-center py-3" id="about">
+    <section class="about d-lg-flex justify-content-center align-items-center py-3">
       <div class="container">
         <div class="row">
     
           <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
-            <div class="about-text">
+            <div class="about-text" style="margin-top: -35px;">
               <small class="small-text">Welcome to <span class="mobile-block">my portfolio website!</span></small>
               <h1 class="animated animated-text mb-2">
                 <span class="mr-2">Hey folks, I'm</span>
@@ -222,10 +543,10 @@
           </div>
     
           <div class="col-lg-5 col-md-12 col-12">
-            <div class="about-image svg" style="margin: 15px;">
+            <div class="about-image svg" style="margin-top: 150px;">
               <img
                 src="images/home-right.png"
-                class="img-fluid" alt="image" style="margin: 15px;">
+                class="img-fluid" alt="image" style="max-width: 85%; margin-left: 40px;">
             </div>
           </div>
         </div>
@@ -234,57 +555,129 @@
 
     <!-- ABOUT ME -->
   </br>
-    <section class="about-me d-lg-flex justify-content-center align-items-center py-3" id="about-me">
-      <div class="container">
-        <div class="row">
-    
-          <div class="col-lg-5 col-md-12 col-12">
-            <div class="about-image svg" style="margin: 15px;">
-              <img
-                src="images/sherman-with-glasses-cute-boy-cartoon-ulaivdtbwyto1kxn.jpg"
-                class="img-fluid" alt="about me image" style="margin: 50px 30px 30px 40px; height: 450px;">
-            </div>
-          </div>
+  </br>
+  </br>
+</br>
+<section class="about-me d-lg-flex justify-content-center align-items-center py-3" id="about">
+  <div class="container">
+    <div class="row">
 
-          <!-- RIGHT SIDE TEXT -->
-          <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
-            <div class="about-text">
-              <small class="small-text">Let’s Dive Deeper <span class="mobile-block">about me</span></small>
-              <h2 class="animated animated-text">
-                <span class="mr-2">I'm, Mohd Maaz Ekram</span>
-              </h2>
-
-              <p class="mb-3 about-description">With over 4 years of diverse experience across data analytics, customer service, and backend operations, I bring a unique blend of technical expertise and business insight. I hold a Master’s degree in Commerce and a Master’s Diploma in Business Data Analytics, which have equipped me with strong analytical, statistical, and decision-making skills.
-              </br>
-              </br>
-                I am proficient in data analysis, statistical modeling, data infrastructure strategy, and dashboard design. I’ve successfully led several high-impact projects, leveraging automation tools and BI platforms to drive data-informed decision-making.</p>
-              
-                <ul class="about-info mt-4 px-md-0 px-2">
-                  <li class="d-flex"><span><strong>Profile :</strong></span> <span>&nbsp;Data Science &amp; Analytics</span></li>
-                  <li class="d-flex"><span><strong>Domain :</strong></span> <span>&nbsp;E-commerce, Loan Sales</span></li>
-                  <li class="d-flex"><span><strong>Education :</strong></span>
-                    <span>&nbsp;Master’s Diploma in Business Data Analytics</span>
-                  </li>
-                  <li class="d-flex"><span><strong>Language :</strong></span> <span>&nbsp;English, Hindi</span></li>
-                  <li class="d-flex"><span><strong>BI Tools :</strong></span> <span>&nbsp;Microsoft Power BI, Looker &amp; Tableau</span></li>
-                  <li class="d-flex">
-                    <span><strong>Other Skills :</strong></span>
-                    <span>&nbsp;Python, SQL, MS Excel, GitHub, Web Scraping &
-                    </br>
-                    Google Cloud Platform (BigQuery,Vertex AI,Cloud Function,Google Colab)</span>
-                  </li>
-                  <li class="d-flex"><span><strong>Interest :</strong></span> <span>&nbsp;Traveling, Indoor Games, Problem Solving </span></li>
-                </ul>
-
-              <div class="custom-btn-group mt-4">
-                <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link">Let's Connect</a>
+      <!-- LEFT SIDE: PROFILE CARD -->
+      <div class="col-lg-5 col-md-12 col-12">
+        <div class="about-card-container mx-lg-0 mx-auto" style="margin-top: 85px; perspective: 1000px;">
+          <div class="about-card" id="spin-card"
+            style="background: #f9f9f9; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); text-align: center; max-width: 90%; transform-origin: center; transition: transform 0.6s ease, opacity 0.3s ease;">
+            <h2 style="font-size: 22px; font-weight: bold;">ABOUT ME</h2>
+            <img src="images/maaz about me image for card section.png" alt="Profile Picture" class="profile-img" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; margin: 15px auto;" />
+            <h3 style="margin-top: 10px; font-weight: bold; font-size: 1.2rem; color: #222; margin-bottom: 5px;">MD MAAZ</h3>
+            <p class="role" style="color: #222; margin-bottom: 5px;">Junior Data Analyst</p>
+            <p class="bio" style="font-size: 14px; color: #222; padding: 0 10px;">
+              Data Analyst @Candere By Kalyan Jewellers | Enabling Data-Driven Decision Making by Automating Processes and Crafting Actionable Dashboards.
+            </p>
+      
+            <div style="font-size: 14px; font-family: Arial, sans-serif; text-align: left; margin-top: 20px;">
+              <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                <i class="fas fa-building" style="margin-right: 10px; color: #555;"></i>
+                <span style="font-size: 13px; color: #222;">Candere By Kalyan Jewellers</span>
+              </div>
+      
+              <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                <i class="fas fa-location-dot" style="margin-right: 10px; color: #555;"></i>
+                <span style="font-size: 13px; color: #222;">Mumbai, India</span>
+              </div>
+      
+              <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                <i class="fas fa-clock" style="margin-right: 10px; color: #555;"></i>
+                <span style="font-size: 13px; color: #222;" id="current-time">Loading time...</span>
+              </div>
+      
+              <div style="display: flex; align-items: center;">
+                <i class="fas fa-link" style="margin-right: 10px; color: #555;"></i>
+                <a href="https://www.linkedin.com/in/mohdmaazekram/"
+                  style="color: #0a66c2; text-decoration: none; word-break: break-word;">
+                  linkedin.com/in/mohdmaazekram
+                </a>
               </div>
             </div>
           </div>
-
+          <div class="blur-overlay"></div>
         </div>
       </div>
-    </section>
+      
+      
+      <script>
+        function updateTime() {
+          const now = new Date();
+          const options = {
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false,
+          };
+          const dateOptions = {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          };
+          const timeString = now.toLocaleTimeString([], options);
+          const dateString = now.toLocaleDateString([], dateOptions);
+          document.getElementById('current-time').textContent = `${timeString} – ${dateString}`;
+        }
+      
+        // Initial call
+        updateTime();
+      
+        // Update every minute
+        setInterval(updateTime, 60000);
+      
+        // Trigger animation when page loads (optional)
+        document.addEventListener('DOMContentLoaded', function() {
+          const card = document.getElementById('spin-card');
+          // card.style.animation = 'spin-in 1.5s ease-out forwards';
+        });
+        
+      </script>
+
+      <!-- RIGHT SIDE TEXT -->
+      <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
+        <div class="about-text">
+          <small class="small-text" style="font-size: 14px;">Let's Dive Deeper <span class="mobile-block">about me</span></small>
+          <h2 class="animated animated-text" style="font-size: 40px;">
+            <span class="mr-2">I'm, Mohd Maaz Ekram</span>
+          </h2>
+
+          <p class="mb-3 about-description" style="font-size: 16px; line-height: 1.6;">
+            With over 4 years of diverse experience across data analytics, customer service, and backend operations, I bring a unique blend of technical expertise and business insight. I hold a Master's degree in Commerce and a Master's Diploma in Business Data Analytics, which have equipped me with strong analytical, statistical, and decision-making skills.
+            </br></br>
+            I am proficient in data analysis, statistical modeling, data infrastructure strategy, and dashboard design. I've successfully led several high-impact projects, leveraging automation tools and BI platforms to drive data-informed decision-making.
+          </p>
+
+          <ul class="about-info mt-4 px-md-0 px-2" style="font-size: 15px;">
+            <li class="d-flex"><span><strong>Profile :</strong></span> <span>&nbsp;Data Science &amp; Analytics</span></li>
+            <li class="d-flex"><span><strong>Domain :</strong></span> <span>&nbsp;E-commerce, Loan Sales</span></li>
+            <li class="d-flex"><span><strong>Education :</strong></span>
+              <span>&nbsp;Master's Diploma in Business Data Analytics</span>
+            </li>
+            <li class="d-flex"><span><strong>Language :</strong></span> <span>&nbsp;English, Hindi</span></li>
+            <li class="d-flex"><span><strong>BI Tools :</strong></span> <span>&nbsp;Microsoft Power BI, Looker &amp; Tableau</span></li>
+            <li class="d-flex">
+              <span><strong>Other Skills :</strong></span>
+              <span>&nbsp;Python, SQL, MS Excel, GitHub, Web Scraping &
+                </br>
+                Google Cloud Platform (BigQuery,Vertex AI,Cloud Function,Google Colab)</span>
+            </li>
+            <li class="d-flex"><span><strong>Interest :</strong></span> <span>&nbsp;Traveling, Indoor Games, Problem Solving </span></li>
+          </ul>
+
+          <div class="custom-btn-group mt-4">
+            <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link" style="font-size: 16px; padding: 12px 30px;">Let's Connect</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
     <div class="social-bar">
       <ul class="social-icons">
@@ -302,56 +695,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const body = document.body;
-        const colorModeToggle = document.querySelector('#color-mode-toggle'); // Assuming you have a toggle with this ID
-    
-        function enableDarkMode() {
-          body.classList.add('dark-theme');
-          localStorage.setItem('theme', 'dark');
-        }
-    
-        function enableLightMode() {
-          body.classList.remove('dark-theme');
-          localStorage.setItem('theme', 'light');
-        }
-    
-        function updateTheme() {
-          const currentTheme = localStorage.getItem('theme');
-          if (currentTheme === 'dark') {
-            enableDarkMode();
-          } else {
-            enableLightMode();
-          }
-        }
-    
-        // Load theme on page load
-        updateTheme();
-    
-        // Example event listener for a color mode toggle button
-        if (colorModeToggle) {
-          colorModeToggle.addEventListener('click', function() {
-            if (body.classList.contains('dark-theme')) {
-              enableLightMode();
-            } else {
-              enableDarkMode();
-            }
-          });
-        }
-      });
-    </script>
 
   </body>
       </br>
       </br>
       </br>
       </br>
-      <div class="text-center" style="margin-bottom: 40px;">
+</br>
+</br>
+      <div class="text-center" style="margin-bottom: 40px;" id="service">
         <h2 class="section-title text-center">Service Offers</h2>
       </div>
         <p class="subtitle">
-          Empowering businesses through innovative data solutions, turning complex information into actionable insights and strategic success.
+          <span style="font-size: 15px;">Empowering businesses through innovative data solutions, turning complex information into actionable insights and strategic success.</span>
         </p>
       
         <div class="services-grid">
@@ -380,80 +736,14 @@
           </div>
         </div>
            
-      
-      <style>
-        .services-grid {
-          display: flex;
-          justify-content: center;
-          gap: 30px;
-          flex-wrap: wrap;
-        }
-      
-        .service-card {
-          background-color: #f9f9ff;
-          border-radius: 10px;
-          padding: 30px 20px;
-          width: 230px;
-          text-align: center;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-          transition: transform 0.3s ease;
-        }
-      
-        .service-card img {
-          width: 70px;
-          height: 70px;
-          object-fit: contain;
-          margin-bottom: 20px;
-        }
-      
-        .service-card img:hover {
-          transform: scale(1.1);
-          transition: transform 0.3s ease-in-out;
-        }
-      
-        .services-section h2 {
-          text-align: center;
-          font-size: 28px;
-          margin-bottom: 10px;
-        }
-      
-        .subtitle {
-          text-align: center;
-          margin-bottom: 30px;
-          max-width: 600px;
-          margin-left: auto;
-          margin-right: auto;
-          font-size: 14px;
-          color: #555;
-        }
-      
-        .service-card h4 {
-          margin: 10px 0 10px;
-          font-size: 18px;
-        }
-      
-        .service-card p {
-          font-size: 13px;
-          color: #555;
-        }
-        .service-card a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .service-card a:hover {
-          text-decoration: underline;
-        }
-
-      </style>
 
     </body>
   </br>
   </br>
   </br>
+</br>
+</br>
+</br>
 
     <!-- FEATURES -->
     <section class="resume py-5 d-lg-flex justify-content-center align-items-center" id="resume">
@@ -547,7 +837,9 @@
         </div>
     </section>
     
-
+  </br>
+</br>
+</br>
     <!-- My Skills Heading Outside the Image Section -->
 <div class="text-center" style="margin-bottom: 40px;">
   <h2 class="section-title text-center">My Skills</h2>
@@ -590,7 +882,7 @@
       </div>
     </div>
 
-    <div class="text-center mt-5">
+    <div class="text-center mt-5" id="project">
       <h2 style="font-weight: bold; color: white;">More projects on <span style="color: #ffc72c;">Github</span></h2>
       <p style="font-size: 18px; color: white;">I love to solve business problems & uncover hidden data stories</p>
       <a href="https://github.com/Mohdmaazekram?tab=repositories" class="btn btn-warning text-dark py-2 px-4 mt-2" style="font-weight: bold;">GitHub</a>
@@ -602,13 +894,13 @@
     <script>
       const counters = document.querySelectorAll('.counter');
       const speed = 20; // smaller is slower
-    
+
       counters.forEach(counter => {
         const updateCount = () => {
           const target = +counter.getAttribute('data-target');
           const count = +counter.innerText;
           const increment = Math.ceil(target / speed);
-    
+
           if (count < target) {
             counter.innerText = count + increment > target ? target : count + increment;
             setTimeout(updateCount, 60); // more delay = slower
@@ -616,11 +908,10 @@
             counter.innerText = target;
           }
         };
-    
+
         updateCount();
       });
     </script>
-
     <!-- CONTACT -->
     <section id="contact" class="contact-section light-theme" style="padding: 60px 0;">
       <div class="container">
@@ -628,6 +919,7 @@
               <div class="col-md-12 text-center mb-5">
                   <h2 class="section-title">Let's Get In Touch!</h2>
                   <hr class="section-divider">
+              </br>
                   <p class="section-description">
                       Ready to start your next project with us? Send a message and we’ll get back to you as soon as possible!
                   </p>
@@ -649,7 +941,7 @@
                       <div class="say-hello-box">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                           <h3 class="say-hello-title" style="margin: 0;">Marol Naka, Andheri East, Mumbai 400059</h3>
-                          <a href="https://www.google.com/search?q=marol+naka&oq=&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgoIARAuGLEDGIAEMgcIAhAAGIAEMgcIAxAAGIAEMg0IBBAuGK8BGMcBGIAEMgYIBRBFGDwyBggGEEUYPDIGCAcQRRg80gEIMTUxMGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8">
+                          <a href="https://www.google.com/maps/place/Marol+Naka,+Andheri+East,+Mumbai+400059" target="_blank">
                             <i class="fas fa-map-marker-alt" style="color: #ffffff; font-size: 20px;"></i>
                           </a>
                         </div>
@@ -700,124 +992,7 @@
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   
-  <style>
-  /* Base styles */
-  #contact {
-      transition: background-color 0.3s ease;
-  }
-  
-  .section-title {
-      font-weight: bold;
-      transition: color 0.3s ease;
-  }
-  
-  .section-divider {
-      width: 60px;
-      height: 3px;
-      background-color: #ffc72c;
-      border: none;
-      margin: 10px auto;
-  }
-  
-  .section-description {
-      color: #6c757d;
-      transition: color 0.3s ease;
-  }
-  
-  .contact-info-box {
-      background-color: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .say-hello-box {
-      padding: 20px;
-      background-color: #343a40;
-      transition: background-color 0.3s ease;
-  }
-  
-  .say-hello-title {
-      margin-bottom: 40px;
-      color: #fff;
-      transition: color 0.3s ease;
-      font-size: 1.0em;
-  }
-  
-  .say-hello-phone,
-  .say-hello-email {
-      color: #fff;
-      margin-bottom: 15px;
-      transition: color 0.3s ease;
-      font-size: 1.0em;
-  }
-  
-  .say-hello-email a {
-      color: #ffc72c;
-      text-decoration: none;
-      transition: color 0.3s ease;
-  }
-  
-  .contact-form .form-control {
-      /* Add your form control styles here */
-  }
-  
-  .submit-button {
-      background-color: #ffc72c;
-      color: #000;
-      font-weight: bold;
-      padding: 12px 30px;
-      border-radius: 30px;
-      width: 100%;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .contact-phone-info i {
-      color: #000;
-      transition: color 0.3s ease;
-  }
-  
-  .phone-number {
-      margin-top: 10px;
-      font-weight: bold;
-      color: #000;
-      transition: color 0.3s ease;
-  }
-  
-  /* Dark theme styles */
-  .dark-theme {
-      background-color: #212529 !important;
-  }
-  
-  .dark-theme .section-title,
-  .dark-theme .section-description,
-  .dark-theme .contact-phone-info i,
-  .dark-theme .phone-number {
-      color: #f8f9fa !important;
-  }
-  
-  .dark-theme .contact-info-box {
-      background-color: #343a40 !important;
-      box-shadow: 0 4px 12px rgba(255,255,255,0.1);
-  }
-  
-  .dark-theme .say-hello-box {
-      background-color: #495057 !important;
-  }
-  
-  .dark-theme .say-hello-title,
-  .dark-theme .say-hello-phone,
-  .dark-theme .say-hello-email {
-      color: #e9ecef !important;
-  }
-  
-  .dark-theme .submit-button {
-      color: #fff !important;
-  }
-  </style>
+
   
   <script>
   function setTheme(theme) {
@@ -836,15 +1011,6 @@
       }
   }
   
-  // Call loadTheme on page load (optional)
-  // document.addEventListener('DOMContentLoaded', loadTheme);
-  
-  // Example of how you might trigger theme change (e.g., button click)
-  // function toggleTheme() {
-  //     const currentTheme = localStorage.getItem('theme') || 'light';
-  //     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-  //     setTheme(newTheme);
-  // }
   </script>
     
 
