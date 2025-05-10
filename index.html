@@ -466,7 +466,33 @@
       .dark-theme .submit-button {
           color: #fff !important;
       }
+      
+      /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx--Profile Views--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
+      .profile-views-container {
+        display: inline-flex;
+        align-items: center;
+        background-image: linear-gradient(to right, rgba(20, 20, 20, 1), #007bff);
+        padding: 6px 12px;
+        border-radius: 16px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        font-family: 'Arial', sans-serif;
+        font-size: 12px;
+        color: white;
+        white-space: nowrap;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+    
+      .profile-views-label {
+        margin-right: 6px;
+        font-weight: normal;
+      }
+    
+      #viewCount {
+        font-size: 12px;
+        font-weight: bold;
+      }
     </style>
   </head>
   
@@ -515,6 +541,31 @@
     
           <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
             <div class="about-text" style="margin-top: -35px;">
+              <div class="profile-views-container">
+                <span class="profile-views-label">Profile Views | </span>
+                <span id="viewCount">Loading...</span>
+              </div>
+              
+              <script>
+              window.onload = function () {
+                fetch('https://api.countapi.xyz/update/mohdmaazekram/portfolio-site/?amount=1')
+                  .then(res => {
+                    if (!res.ok) {
+                      throw new Error(`HTTP error! status: ${res.status}`);
+                    }
+                    return res.json();
+                  })
+                  .then(data => {
+                    document.getElementById('viewCount').textContent = data.value.toLocaleString();
+                  })
+                  .catch(error => {
+                    console.error('Failed to fetch view count:', error);
+                    document.getElementById('viewCount').textContent = 'Loading...';
+                  });
+              };
+              </script>
+            </br>
+          </br>
               <small class="small-text">Welcome to <span class="mobile-block">my portfolio website!</span></small>
               <h1 class="animated animated-text mb-2">
                 <span class="mr-2">Hey folks, I'm</span>
