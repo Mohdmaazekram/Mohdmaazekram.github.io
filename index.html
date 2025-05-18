@@ -300,13 +300,15 @@
 
       /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx--Service Offers CSS--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
+      /* Flexbox layout for the grid of service cards */
       .services-grid {
         display: flex;
         justify-content: center;
         gap: 30px;
         flex-wrap: wrap;
       }
-    
+      
+      /* Styling for each service card */
       .service-card {
         background-color: #f9f9ff;
         border-radius: 10px;
@@ -317,27 +319,39 @@
         flex-direction: column;
         align-items: center;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
+        position: relative;
+        overflow: hidden; /* Ensure child elements don't overflow the card */
       }
-    
+      
+      /* Image styling */
       .service-card img {
         width: 70px;
         height: 70px;
         object-fit: contain;
         margin-bottom: 20px;
+        transition: transform 0.3s ease-in-out; /* Added transition for smooth zoom effect */
       }
-    
-      .service-card img:hover {
-        transform: scale(1.1);
-        transition: transform 0.3s ease-in-out;
+      
+      /* Zoom effect for images */
+      .service-card:hover img {
+        transform: scale(1.1); /* Scale image on hover */
       }
-    
+      
+      /* Zoom effect for the entire card */
+      .service-card:hover {
+        transform: scale(1.05); /* Slightly zoom the card */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Add a stronger shadow on hover */
+      }
+      
+      /* Title of the services section */
       .services-section h2 {
         text-align: center;
         font-size: 28px;
         margin-bottom: 10px;
       }
-    
+      
+      /* Subtitle styling */
       .subtitle {
         text-align: center;
         margin-bottom: 30px;
@@ -347,24 +361,34 @@
         font-size: 14px;
         color: #222;
       }
-    
+      
+      /* Heading styling within each service card */
       .service-card h4 {
         margin: 10px 0 10px;
         font-size: 18px;
+        transition: color 0.3s ease;
       }
-    
+      
+      /* Paragraph styling within each service card */
       .service-card p {
         font-size: 13px;
         color: #222;
+        transition: color 0.3s ease;
       }
+      
+      /* Link styling inside the service card */
       .service-card a {
         color: #222;
         text-decoration: none;
+        transition: color 0.3s ease; /* Added transition to link color */
       }
-
+      
+      /* Hover effect on the links */
       .service-card a:hover {
         text-decoration: underline;
+        color: #0066cc; /* Added a hover color for links */
       }
+
 
       /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx--Contact CSS--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
@@ -581,12 +605,12 @@
                                     viewCountElement.textContent = data.totalUniqueUsers;
                                 } else {
                                     console.error('Error: totalUniqueUsers is missing or invalid in the response:', data);
-                                    viewCountElement.textContent = 'N/A';
+                                    viewCountElement.textContent = '...';
                                 }
                             })
                             .catch(error => {
                                 console.error('Error fetching unique users:', error);
-                                document.getElementById('viewCount').textContent = 'N/A';
+                                document.getElementById('viewCount').textContent = '...';
                             });
                     };
                 </script>
