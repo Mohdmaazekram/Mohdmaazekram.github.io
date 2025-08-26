@@ -1106,11 +1106,10 @@
 
                   fetch(scriptURL, {
                     method: "POST",
-                    headers: {
-                      "Content-Type": "application/json"
-                    },
+                    redirect: "follow",
+                    headers: { 'Content-Type': "text/plain;charset=utf-8" },
                     body: JSON.stringify(formData)
-                  })
+                  }
                     .then(res => res.json())
                     .then(data => {
                       if (data.result === "success") {
