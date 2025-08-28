@@ -1063,6 +1063,7 @@
                   </div>
               </div>
   
+              <!-- 🌐 Contact Form -->
               <div class="col-md-6">
                 <form class="contact-form" id="contact-form">
                   <div class="mb-3">
@@ -1076,7 +1077,7 @@
                   </div>
                   <div class="mb-3">
                     <textarea class="form-control themed-placeholder" rows="4" placeholder="Message" name="message" required></textarea>
-                    <small class="text-danger">A message is required.</small>
+                    <small class="text-danger d-none" id="message-error">A message is required.</small>
                   </div>
                   <div class="text-center">
                     <button type="submit" class="btn submit-button">SUBMIT</button>
@@ -1091,40 +1092,30 @@
 
               <!-- 🚀 JavaScript to handle the POST request -->
               <script>
-                const scriptURL = "https://script.google.com/macros/s/AKfycbwC4i-a7BWRe0-w_h2upBSPObVxtgxKQBht8NBJkOxni8zViwdbdm69SM6SCgUQdbQmFw/exec";
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbwC4i-a7BWRe0-w_h2upBSPObVxtgxKQBht8NBJkOxni8zViwdbdm69SM6SCgUQdbQmFw/exec';
 
-                document.getElementById("contact-form").addEventListener("submit", function (e) {
+                document.getElementById('contact-form').addEventListener('submit', function (e) {
                   e.preventDefault();
 
                   const form = e.target;
-                  const formData = {
-                    name: form.name.value,
-                    email: form.email.value,
-                    phone: form.phone.value,
-                    message: form.message.value
-                  };
+                  const formData = new FormData(form);
 
                   fetch(scriptURL, {
-                    method: "POST",
-                    redirect: "follow",
-                    headers: { 'Content-Type': "text/plain;charset=utf-8" },
-                    body: JSON.stringify(formData)
-                  }
-                    .then(res => res.json())
-                    .then(data => {
-                      if (data.result === "success") {
-                        alert("Message submitted successfully!");
-                        form.reset();
-                      } else {
-                        alert("Failed to submit: " + data.message);
-                      }
-                    })
-                    .catch(error => {
-                      console.error("Submission error:", error);
-                      alert("There was an error submitting the form.");
-                    });
+                    method: 'POST',
+                    body: formData
+                  })
+                  .then(response => response.text())
+                  .then(result => {
+                    alert('Message submitted successfully!');
+                    form.reset();
+                  })
+                  .catch(error => {
+                    console.error('Error!', error.message);
+                    alert('There was an error submitting the form.');
+                  });
                 });
               </script>
+
           </div>
       </div>
   </section>
