@@ -1096,11 +1096,11 @@
 
                 document.getElementById('contact-form').addEventListener('submit', function (e) {
                   e.preventDefault();
-
+                
                   const form = e.target;
                   const formData = new FormData(form);
-
-                  fetch(scriptURL, {
+                
+                  fetch('https://script.google.com/macros/s/AKfycbwC4i-a7BWRe0-w_h2upBSPObVxtgxKQBht8NBJkOxni8zViwdbdm69SM6SCgUQdbQmFw/exec', {
                     method: 'POST',
                     body: formData
                   })
