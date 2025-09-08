@@ -54,6 +54,31 @@
         --icon-hover-color: #00aaff;
         --bar-color: #555;
       }
+
+      .custom-header.navbar-expand-lg .navbar-nav .nav-item {
+        padding: 10px 0;
+      }
+
+      .custom-header.navbar-expand-lg .navbar-nav .nav-link {
+        padding: 0 20px;
+      }
+
+      .custom-header .navbar-toggler .navbar-toggler-icon {
+        background: #e1e1e1;
+      }
+
+      @media (max-width: 767px) {
+        .custom-header .navbar-collapse {
+          background: #3f3f3f;
+          padding-bottom: 0;
+        }
+      }
+
+      @media (max-width: 991px) {
+        section.about {
+          padding-top: 100px !important;
+        }
+      }
     
       /* Style for the "Hey folks..." heading */
       .about-title {
@@ -542,7 +567,7 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- MENU -->
-    <nav class="navbar navbar-expand-sm navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light custom-header">
       <div class="container">
         <a class="navbar-brand" href="index.html"><i class='uil uil-user'></i> Maaz</a>
 
