@@ -1182,57 +1182,63 @@
               </div>
   
               <!-- 🌐 Contact Form -->
-				<div class="col-md-6">
-				  <form class="contact-form" id="contact-form">
-					<div class="mb-3">
-					  <input type="text" class="form-control themed-placeholder" placeholder="Full name" name="name" required>
-					</div>
-					<div class="mb-3">
-					  <input type="email" class="form-control themed-placeholder" placeholder="Email address" name="email" required>
-					</div>
-					<div class="mb-3">
-					  <input type="tel" class="form-control themed-placeholder" placeholder="Phone number" name="phone" required>
-					</div>
-					<div class="mb-3">
-					  <textarea class="form-control themed-placeholder" rows="4" placeholder="Message" name="message" required></textarea>
-					  <small class="text-danger d-none" id="message-error">A message is required.</small>
-					</div>
-					<div class="text-center">
-					  <button type="submit" class="btn submit-button">SUBMIT</button>
-					</div>
-				  </form>
-				
-				  <div class="text-center mt-4 contact-phone-info">
-					<i class="fas fa-mobile-alt fa-2x"></i>
-					<p class="section-title text-center">+91 (887) -956-9497</p>
-				  </div>
-				</div>
-				
-				<!-- 🚀 JavaScript to handle the POST request -->
-				<script>
-				  const scriptURL = 'https://script.google.com/macros/s/AKfycbx6wIqxLxkJ6UIS-L90VN9dV_jpmNwIARX5yPU_paXsCojwrzFQvC9TWi5R3AlUpQPFVQ/exec';
-				
-				  document.getElementById('contact-form').addEventListener('submit', function (e) {
-					e.preventDefault();
-				
-					const form = e.target;
-					const formData = new FormData(form);
-				
-					fetch(scriptURL, {
-					  method: 'POST',
-					  body: new URLSearchParams(formData)  // Convert to URL-encoded format
-					})
-					.then(response => response.text())
-					.then(result => {
-					  alert('Message submitted successfully!');
-					  form.reset();
-					})
-					.catch(error => {
-					  console.error('Error!', error.message);
-					  alert('There was an error submitting the form.');
-					});
-				  });
-				</script>
+              <div class="col-md-6">
+                <form class="contact-form" id="contact-form">
+                  <div class="mb-3">
+                    <input type="text" class="form-control themed-placeholder" placeholder="Full name" name="name" required>
+                  </div>
+                  <div class="mb-3">
+                    <input type="email" class="form-control themed-placeholder" placeholder="Email address" name="email" required>
+                  </div>
+                  <div class="mb-3">
+                    <input type="tel" class="form-control themed-placeholder" placeholder="Phone number" name="phone" required>
+                  </div>
+                  <div class="mb-3">
+                    <textarea class="form-control themed-placeholder" rows="4" placeholder="Message" name="message" required></textarea>
+                    <small class="text-danger d-none" id="message-error">A message is required.</small>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit" class="btn submit-button">SUBMIT</button>
+                  </div>
+                </form>
+
+                <div class="text-center mt-4 contact-phone-info">
+                  <i class="fas fa-mobile-alt fa-2x"></i>
+                  <p class="section-title text-center">+91 (887) -956-9497</p>
+                </div>
+              </div>
+
+              <!-- 🚀 JavaScript to handle the POST request -->
+              <script>
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbz7AtQ-FAnjZZ3s5GdW06e0yWPFb8x18BQn5y-whM4wGM4C78BlDqp9SxW9b150pvqdDg/exec';
+
+                document.getElementById('contact-form').addEventListener('submit', function (e) {
+                  e.preventDefault();
+
+                  const form = e.target;
+                  const formData = new FormData(form);
+
+                  // Debug log
+                  for (let [key, value] of formData.entries()) {
+                    console.log(`${key}: ${value}`);
+                  }
+
+                  fetch(scriptURL, {
+                    method: 'POST',
+                    body: formData
+                  })
+                  .then(response => response.text())
+                  .then(result => {
+                    console.log("Server Response:", result);
+                    alert('Message submitted successfully!');
+                    form.reset();
+                  })
+                  .catch(error => {
+                    console.error('Error!', error.message);
+                    alert('There was an error submitting the form.');
+                  });
+                });
+              </script>
           </div>
       </div>
   </section>
